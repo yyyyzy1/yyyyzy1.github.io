@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DGD is a method to distill 2D semantic features to dynamic 3D Gaussian Splatting scenes, allowing for semantic segmentation of dynamic objects in 3D.">
+  <meta name="keywords" content="DGD, Segmentation, 3D Gaussians Splatting, Foundation Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Meta tags for social media banners !-->
+  <meta property="og:title" content="SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians"/>
+  <meta property="og:description" content="DGD is a method to distill 2D semantic features to dynamic 3D Gaussian Splatting scenes, allowing for semantic segmentation of dynamic objects in 3D."/>
+<!--  <meta property="og:url" content="https://threedle.github.io/iSeg/"/>-->
+<!--  <meta property="og:image" content="./static/images/og_banner.png" />-->
+<!--  <meta property="og:image:width" content="1200"/>-->
+<!--  <meta property="og:image:height" content="630"/>-->
+
+  <meta name="twitter:title" content="SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians">
+  <meta name="twitter:description" content="DGD is a method to distill 2D semantic features to dynamic 3D Gaussian Splatting scenes, allowing for semantic segmentation of dynamic objects in 3D.">
+<!--  <meta name="twitter:image" content="./static/images/twitter_banner.png">-->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- End of Meta tags for social media banners !-->
+  
+  <title>SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians</title>
+<!--  <link rel="icon" type="image/x-icon" href="./static/images/iseg_icon.ico">-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+<!-- Navigation Bar -->
+<!--<nav class="navbar" role="navigation" aria-label="main navigation">-->
+<!--  <div class="navbar-brand">-->
+<!--    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">-->
+<!--      <span aria-hidden="true"></span>-->
+<!--      <span aria-hidden="true"></span>-->
+<!--      <span aria-hidden="true"></span>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--  <div class="navbar-menu">-->
+<!--    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">-->
+<!--      <a class="navbar-item" href="https://3dl.cs.uchicago.edu/">-->
+<!--        <span class="threedle-icon"></span>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+<!-- End of Navigation Bar -->
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians</h1>
+          
+
+
+
+  
+<!-- Results carousel -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+      
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-lamp-positive">
+          <video poster="" id="lamp-positive" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/detect/detect_americano.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">detect:Cup"</p>
+        </div>
+        <div class="item item-bike-positive">
+          <video poster="" id="bike-positive" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/detect/detect_broom.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">detect:"Broom"</p>
+        </div>
+        <div class="item item-alien-positive">
+          <video poster="" id="alien-positive" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/detect/detect_chick.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">detect:"Toy"</p>
+        </div>
+        <div class="item item-camel-positive">
+          <video poster="" id="camel-positive" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/detect/detect_cookie.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">detect:"Cookie""</p>
+        </div>
+        <div class="item item-hammer-positive-negative">
+            <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/detect/detect_torchocolate.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">detect:"Chocolate"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of results carousel -->
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+          <br>
+          </b> Our method enables high-quality rendering and semantic understanding for both simple and complex dynamic scenes, providing a stable foundation for downstream tasks.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End of teaser video -->
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Dynamic 3D semantic Gaussians can be used for reconstructing and understanding dynamic scenes captured from a monocular camera, 
+            resulting in a better handling of target information with temporal variations than static sences.
+            However, most current work focuses on static scenes, directly applying static methods for dynamic scenes is impractical,
+            as static methods fail to capture the temporal behaviors and features of dynamic targets.
+            To the best of our knowledge, only one existing work focuses on semantic comprehension of dynamic scenes based on 3DGS. 
+            While this work demonstrates promising capabilities in simple scenes,
+            it struggles to achieve high-fidelity rendering and accurate semantic features in scenarios where the background contains significant noise and the dynamic foreground exhibits substantial deformation and intricate textures. 
+            Because it simply combines dynamic reconstruction and understanding without considering the difference between static and dynamic Gaussians, leading to the mixture of static background and dynamic foreground features.
+            To address these limitations, we propose SDHD-G,consists of hierarchical Gaussian flows and hierarchical rendering weights. The former realizes effective separation of static and dynamic rendering and their features. 
+            The former realizes effective separation of static and dynamic rendering and their features. 
+            The latter is employed in scenes with complex background noise (e.g. the “broom” scene in Hypernerf) to enhance the rendering quality of dynamic foregrounds.
+            Extensive experiments show that our method consistently outperforms previous method on synthetic and real-world datasets. 
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ end of Abstract -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method Overview-->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <hr class="divider" />
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+          Dynamic 3D Gaussians Distillation utilizes 3D Gaussian representation and optimizes
+          spatial parameters of the Gaussians and their deformation, concurrently with
+          appearance properties with a semantic feature per Gaussian. Our learned representation
+          enables efficient semantic understanding and manipulation of dynamic 3D scenes.
+          </p>
+        </div>
+        <div class="two-col-image">
+          <img src="./static/images/pipeline3.png" type="image/png">
+        </div>
+      </div>
+    </div>
+    <!-- End of Method Overview-->
+    
+    
+    
+    
+    <!-- Results -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <hr class="divider" />
+        <h2 class="title is-3">Visual Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            The following results show the novel view rendering views and the extracted semantic feature maps using our method, 
+            evaluated on both the real-world HyperNeRF dataset and the synthetic D-NeRF dataset. The visualization of the feature maps is displayed using PCA for dimensionality reduction.
+            <table width="200" border="0" align="center">
+            <tbody>
+
+              <tr>
+                <td align="center">
+                    <video width="200" autoplay muted playsinline loop>
+                        <source src="./static/videos/renders/renders_cookie.mp4" type="video/mp4" />
+                    </video>
+                </td>
+                 <td align="center"><video width="200" autoplay muted playsinline loop>
+                    <source src="./static/videos/renders/renders_chick.mp4" type="video/mp4" />
+                </video></td>
+                   <td align="center"><video width="200" autoplay muted playsinline loop>
+                    <source src="./static/videos/renders/renders_americano.mp4" type="video/mp4" />
+                </video></td>
+                           <td align="center"><video width="200" autoplay muted playsinline loop>
+                    <source src="./static/videos/renders/renders_torchocolate.mp4" type="video/mp4" />
+                </video></td>
+        </tr>
+              <tr>
+                <td align="center">Split-Cookie</td>
+                <td align="center">ChickChicken</td>
+                <td align="center">Americano</td>
+                <td align="center">Torchocolate</td>
+              </tr>
+                </tr>
+            </tbody>
+          </table>
+            <p>
+            
+        <table width="200" border="0" align="center">
+            <tbody>
+              <tr>
+                <td align="center"><video width="400" autoplay muted playsinline loop>
+                    <source src="./static/videos/renders/renders_jumpingjacks.mp4" type="video/mp4" />
+                </video></td>
+                 <td align="center"><video width="400" autoplay muted playsinline loop>
+                    <source src="./static/videos/renders/renders_standup.mp4" type="video/mp4" />
+                </video></td>
+                   <td align="center"><video width="400" autoplay muted playsinline loop>
+                    <source src="./static/videos/renders/renders_trex.mp4" type="video/mp4" />
+                </video></td>
+                    <td align="center"><video width="400" autoplay muted playsinline loop>
+                    <source src="./static/videos/renders/renders_hook.mp4" type="video/mp4" />
+                </video></td>
+              </tr>
+              <tr>
+                  
+                <td align="center" width=250>Jumpingjacks</td>
+                <td align="center" width=250>Standup</td>
+                <td align="center" width=250>Trex</td>
+                <td align="center" width=250>Hook</td>
+              </tr>
+<!--                </tr>-->
+            </tbody>
+          </table>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End of Results -->
+
+    <!-- Segmentation with differents foundation models -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <hr class="divider" />
+        <h2 class="title is-3">Segmentation on Synthetic dataset</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our method achieves excellent semantic segmentation performance not only on real-world datasets but also on synthetic datasets.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End of Segmentation with differents foundation models -->
+    <!-- Results carousel -->
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-lamp-positive">
+              <video poster="" id="lamp-positive" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/detect/detect_jumpingjacks.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">detect"Jacket"</p>
+            </div>
+            <div class="item item-bike-positive">
+              <video poster="" id="bike-positive" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/detect/detect_standup.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">detect"Helmet"</p>
+            </div>
+            <div class="item item-alien-positive">
+              <video poster="" id="alien-positive" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/detect/detect_trex.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">detect"Skull"</p>
+            </div>
+            <div class="item item-camel-positive">
+              <video poster="" id="camel-positive" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/detect/detect_jumpingjacks.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">DINOv2 and Lseg (click)</p>
+            </div>
+            <div class="item item-hammer-positive-negative">
+                <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
+                    <source src="./static/videos/detect/detect_hook.mp4" type="video/mp4">
+                </video>
+                <p class="has-text-centered">detect"hands"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of results carousel -->
+    
+    
+    
+    
+    
+    <!-- Granularity -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <hr class="divider" />
+        <h2 class="title is-3">comparison</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our approach exceeds Baseline in rendering quality, semantic feature integrity, and lexical detection accuracy
+            (Our method is on the left, Baseline is on the right)
+          </p>
+        </div>
+      </div> 
+    </div> 
+    <!-- End of Granularity -->
+    <!-- Results carousel -->
+    <!-- <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-lamp-positive">
+              <video poster="" id="lamp-positive" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/compare/" type="video/mp4">
+              </video>
+              <p class="has-text-centered">θ = 0.9</p>
+            </div> -->
+            <!-- <div class="item item-bike-positive">
+              <video poster="" id="bike-positive" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/compare/renders_broom_duibi.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">θ = 0.85</p>
+            </div>
+            <div class="item item-alien-positive">
+              <video poster="" id="alien-positive" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/Granularity/video_080_sloww.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">θ = 0.8</p>
+            </div>
+            <div class="item item-camel-positive">
+              <video poster="" id="camel-positive" autoplay muted loop playsinline height="100%">
+                  <source src="./static/videos/Granularity/video_075_sloww.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered">θ = 0.75</p>
+            </div>
+            <div class="item item-hammer-positive-negative">
+                <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
+                    <source src="./static/videos/Granularity/video_070_sloww.mp4" type="video/mp4">
+                </video>
+                <p class="has-text-centered">θ = 0.7</p>
+            </div>
+            <div class="item item-hammer-positive-negative">
+                <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
+                    <source src="./static/videos/Granularity/video_060_sloww.mp4" type="video/mp4">
+                </video>
+                <p class="has-text-centered">θ = 0.6</p> -->
+            <!-- </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- End of results carousel -->
+    <h1>Video Example</h1>
+    <!-- 在这里插入视频 -->
+    <video width="1000" height="536" autoplay muted loop playsinline>
+        <source src="./static/videos/compare/page_broom_duibi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+<!-- Results -->
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <hr class="divider" />
+    <h2 class="title is-3">Editing</h2>
+    <div class="content has-text-justified">
+        Visual illustration of our method’s ability to semantically remove objects. </p>
+        <table width="200" border="0" align="center">
+            <tbody>
+                    <tr>
+                <td align="center">remove "Cookie"</td>
+                <td></td>
+                <td align="center">remove "Lemon"</td>
+            </tr>
+            <tr>
+                <td align="center"><video width="400" controls="controls" autoplay muted playsinline loop>
+                    <source src="./static/videos/remove/remove_cookie.mp4" type="video/mp4" />
+                </video></td>
+                <td align="center"><video width="10">
+                <td align="center"><video width="600" controls="controls" autoplay muted playsinline loop>
+                    <source src="./static/videos/remove/remove_lemon.mp4" type="video/mp4" />
+                </video></td>
+            </tr>
+
+            </tr>
+            </tbody>
+        </table>
+        
+        
+   
+
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/Isaaclabe/DGD-Dynamic-3D-Gaussians-Distillation" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Parts of the code for this website are reused from the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> contributed by the authors of <a href="https://nerfies.github.io/">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End of footer -->
+</body>
+</html>
