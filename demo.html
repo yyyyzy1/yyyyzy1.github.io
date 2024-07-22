@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Meta tags for social media banners !-->
-  <meta property="og:title" content="SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians"/>
+  <meta property="og:title" content="DGD: Dynamic 3D Gaussians Distillation"/>
   <meta property="og:description" content="DGD is a method to distill 2D semantic features to dynamic 3D Gaussian Splatting scenes, allowing for semantic segmentation of dynamic objects in 3D."/>
 <!--  <meta property="og:url" content="https://threedle.github.io/iSeg/"/>-->
 <!--  <meta property="og:image" content="./static/images/og_banner.png" />-->
 <!--  <meta property="og:image:width" content="1200"/>-->
 <!--  <meta property="og:image:height" content="630"/>-->
 
-  <meta name="twitter:title" content="SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians">
+  <meta name="twitter:title" content="DGD: Dynamic 3D Gaussians Distillation">
   <meta name="twitter:description" content="DGD is a method to distill 2D semantic features to dynamic 3D Gaussian Splatting scenes, allowing for semantic segmentation of dynamic objects in 3D.">
 <!--  <meta name="twitter:image" content="./static/images/twitter_banner.png">-->
   <meta name="twitter:card" content="summary_large_image">
   <!-- End of Meta tags for social media banners !-->
   
-  <title>SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians</title>
+  <title>DGD: Dynamic 3D Gaussians Distillation</title>
 <!--  <link rel="icon" type="image/x-icon" href="./static/images/iseg_icon.ico">-->
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
@@ -64,9 +64,83 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians</h1>
-          
+          <h1 class="title is-1 publication-title">DGD: Dynamic 3D Gaussians Distillation</h1>
+          <!-- Add ECCV 2024 with larger size -->
+          <div class="is-size-3 has-text-weight-bold">ECCV 2024</div>
+          <!-- Paper Authors -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Isaac Labe</a><sup>1</sup>&nbsp;&nbsp;
+            </span>
 
+            <span class="author-block">
+              <a>Noam Issachar</a><sup>1</sup>&nbsp;&nbsp;
+            </span>
+            
+            <span class="author-block">
+              <a href="https://itailang.github.io">Itai Lang</a><sup>2</sup>&nbsp;&nbsp;
+            </span>
+            
+            <span class="author-block">
+              <a href="https://sagiebenaim.github.io">Sagie Benaim</a><sup>1</sup>
+            </span>
+          </div>
+          <!-- End of Paper Authors -->
+
+          <!-- Institutions -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <sup>1</sup>The Hebrew University of Jerusalem  &nbsp;&nbsp;<sup>2</sup>University of Chicago
+            </span>
+          </div>
+          <!-- End of Institutions -->
+
+          <!-- Publication Links -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2405.19321" target="_blank"
+                 class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+               </a>
+             </span>
+             <!-- End of Paper Link 
+
+              <!-- arXiv abstract Link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2405.19321" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- End of arXiv abstract Link -->
+
+              <!-- Code Link -->
+              <span class="link-block">
+                <a href="https://github.com/Isaaclabe/DGD-Dynamic-3D-Gaussians-Distillation"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- End of Code Link -->
+            </div>
+          </div>
+          <!-- End of Publication Links -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
   
@@ -78,33 +152,33 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-lamp-positive">
           <video poster="" id="lamp-positive" autoplay muted loop playsinline height="100%">
-              <source src="./static/videos/detect/detect_americano.mp4" type="video/mp4">
+              <source src="./static/videos/detect/detect_americano.mp4 type="video/mp4">
           </video>
-          <p class="has-text-centered">detect:Cup"</p>
+          <p class="has-text-centered">red: "Hands", green: "Cookie"</p>
         </div>
         <div class="item item-bike-positive">
           <video poster="" id="bike-positive" autoplay muted loop playsinline height="100%">
               <source src="./static/videos/detect/detect_broom.mp4" type="video/mp4">
           </video>
-          <p class="has-text-centered">detect:"Broom"</p>
+          <p class="has-text-centered">red: "Hand", green: "Cup"</p>
         </div>
         <div class="item item-alien-positive">
           <video poster="" id="alien-positive" autoplay muted loop playsinline height="100%">
               <source src="./static/videos/detect/detect_chick.mp4" type="video/mp4">
           </video>
-          <p class="has-text-centered">detect:"Toy"</p>
+          <p class="has-text-centered">red: "Hands", green: "Chicken"</p>
         </div>
         <div class="item item-camel-positive">
           <video poster="" id="camel-positive" autoplay muted loop playsinline height="100%">
               <source src="./static/videos/detect/detect_cookie.mp4" type="video/mp4">
           </video>
-          <p class="has-text-centered">detect:"Cookie""</p>
+          <p class="has-text-centered">red: "Hands"/"arms", green: "Torch"</p>
         </div>
         <div class="item item-hammer-positive-negative">
             <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
                 <source src="./static/videos/detect/detect_torchocolate.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered">detect:"Chocolate"</p>
+            <p class="has-text-centered">CLIP segmentation: "hands"-"cookie"</p>
         </div>
       </div>
     </div>
@@ -118,7 +192,7 @@
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
           <br>
-          </b> Our method enables high-quality rendering and semantic understanding for both simple and complex dynamic scenes, providing a stable foundation for downstream tasks.
+          <b>TL;DR:</b> We distill 2D semantic features to dynamic 3D Gaussian Splatting scenes, allowing for semantic segmentation of dynamic objects in 3D.
       </h2>
     </div>
   </div>
@@ -135,19 +209,22 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Dynamic 3D semantic Gaussians can be used for reconstructing and understanding dynamic scenes captured from a monocular camera, 
-            resulting in a better handling of target information with temporal variations than static sences.
-            However, most current work focuses on static scenes, directly applying static methods for dynamic scenes is impractical,
-            as static methods fail to capture the temporal behaviors and features of dynamic targets.
-            To the best of our knowledge, only one existing work focuses on semantic comprehension of dynamic scenes based on 3DGS. 
-            While this work demonstrates promising capabilities in simple scenes,
-            it struggles to achieve high-fidelity rendering and accurate semantic features in scenarios where the background contains significant noise and the dynamic foreground exhibits substantial deformation and intricate textures. 
-            Because it simply combines dynamic reconstruction and understanding without considering the difference between static and dynamic Gaussians, leading to the mixture of static background and dynamic foreground features.
-            To address these limitations, we propose SDHD-G,consists of hierarchical Gaussian flows and hierarchical rendering weights. The former realizes effective separation of static and dynamic rendering and their features. 
-            The former realizes effective separation of static and dynamic rendering and their features. 
-            The latter is employed in scenes with complex background noise (e.g. the “broom” scene in Hypernerf) to enhance the rendering quality of dynamic foregrounds.
-            Extensive experiments show that our method consistently outperforms previous method on synthetic and real-world datasets. 
-
+            We tackle the task of learning dynamic 3D semantic radiance
+            fields given a single monocular video as input. Our learned semantic radiance
+            field captures per-point semantics as well as color and geometric
+            properties for a dynamic 3D scene, enabling the generation of novel views
+            and their corresponding semantics. This enables the segmentation and
+            tracking of a diverse set of 3D semantic entities, specified using a simple
+            and intuitive interface that includes a user click or a text prompt. To this
+            end, we present DGD, a unified 3D representation for both the appearance
+            and semantics of a dynamic 3D scene, building upon the recently
+            proposed dynamic 3D Gaussians representation. Our representation is
+            optimized over time with both color and semantic information. Key to
+            our method is the joint optimization of the appearance and semantic
+            attributes, which jointly affect the geometric properties of the scene. We
+            evaluate our approach in its ability to enable dense semantic 3D object
+            tracking and demonstrate high-quality results that are fast to render, for
+            a diverse set of scenes.
           </p>
         </div>
       </div>
@@ -172,7 +249,7 @@
           </p>
         </div>
         <div class="two-col-image">
-          <img src="./static/images/pipeline3.png" type="image/png">
+          <img src="./static/images/system.png" type="image/png">
         </div>
       </div>
     </div>
@@ -185,63 +262,62 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <hr class="divider" />
-        <h2 class="title is-3">Visual Results</h2>
+        <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified">
           <p>
-            The following results show the novel view rendering views and the extracted semantic feature maps using our method, 
-            evaluated on both the real-world HyperNeRF dataset and the synthetic D-NeRF dataset. The visualization of the feature maps is displayed using PCA for dimensionality reduction.
+            The following results show a fixed novel view over different timesteps using our method for semantically segmenting objects over time in the real-world HyperNerf dataset. The considered objects are marked in green and red.
             <table width="200" border="0" align="center">
             <tbody>
 
               <tr>
                 <td align="center">
                     <video width="200" autoplay muted playsinline loop>
-                        <source src="./static/videos/renders/renders_cookie.mp4" type="video/mp4" />
+                        <source src="./static/videos/Single_novel_view/video_cookie.mp4" type="video/mp4" />
                     </video>
                 </td>
                  <td align="center"><video width="200" autoplay muted playsinline loop>
-                    <source src="./static/videos/renders/renders_chick.mp4" type="video/mp4" />
+                    <source src="./static/videos/Single_novel_view/video_torch.mp4" type="video/mp4" />
                 </video></td>
                    <td align="center"><video width="200" autoplay muted playsinline loop>
-                    <source src="./static/videos/renders/renders_americano.mp4" type="video/mp4" />
+                    <source src="./static/videos/Single_novel_view/video_chicken.mp4" type="video/mp4" />
                 </video></td>
                            <td align="center"><video width="200" autoplay muted playsinline loop>
-                    <source src="./static/videos/renders/renders_torchocolate.mp4" type="video/mp4" />
+                    <source src="./static/videos/Single_novel_view/video_coffee.mp4" type="video/mp4" />
                 </video></td>
         </tr>
               <tr>
-                <td align="center">Split-Cookie</td>
-                <td align="center">ChickChicken</td>
-                <td align="center">Americano</td>
-                <td align="center">Torchocolate</td>
+                <td align="center">Cookie (green), Hands (red)</td>
+                <td align="center">Torch (green), Hands (red)</td>
+                <td align="center">Chicken (green), Hands (red)</td>
+                <td align="center">Cup (green), Hands (red)</td>
               </tr>
                 </tr>
             </tbody>
           </table>
             <p>
-            
+            The following result are for the synthetic D-NeRF dataset. The considered parts are marked by green, yellow, and red colors.
         <table width="200" border="0" align="center">
             <tbody>
               <tr>
-                <td align="center"><video width="400" autoplay muted playsinline loop>
-                    <source src="./static/videos/renders/renders_jumpingjacks.mp4" type="video/mp4" />
+                <td align="center"><video width="200" autoplay muted playsinline loop>
+                    <source src="./static/videos/Single_novel_view/video_Trex.mp4" type="video/mp4" />
                 </video></td>
-                 <td align="center"><video width="400" autoplay muted playsinline loop>
-                    <source src="./static/videos/renders/renders_standup.mp4" type="video/mp4" />
+                 <td align="center"><video width="200" autoplay muted playsinline loop>
+                    <source src="./static/videos/Single_novel_view/video_standup.mp4" type="video/mp4" />
                 </video></td>
-                   <td align="center"><video width="400" autoplay muted playsinline loop>
-                    <source src="./static/videos/renders/renders_trex.mp4" type="video/mp4" />
+                   <td align="center"><video width="200" autoplay muted playsinline loop>
+                    <source src="./static/videos/Single_novel_view/video_jack.mp4" type="video/mp4" />
                 </video></td>
-                    <td align="center"><video width="400" autoplay muted playsinline loop>
-                    <source src="./static/videos/renders/renders_hook.mp4" type="video/mp4" />
+                    <td align="center"><video width="200" autoplay muted playsinline loop>
+                    <source src="./static/videos/Single_novel_view/video_hook.mp4" type="video/mp4" />
                 </video></td>
               </tr>
               <tr>
                   
-                <td align="center" width=250>Jumpingjacks</td>
-                <td align="center" width=250>Standup</td>
-                <td align="center" width=250>Trex</td>
-                <td align="center" width=250>Hook</td>
+                <td align="center" width=250>red: "Spine", yellow: "Ribs", green: "Skull"</td>
+                <td align="center" width=250>red: "Face", yellow: "Shoes", green: "Helmet"</td>
+                <td align="center" width=250>red: "Pants", yellow: "Hair", green: "Hands"</td>
+                <td align="center" width=250>yellow: "Feets", green: "Hands"</td>
               </tr>
 <!--                </tr>-->
             </tbody>
@@ -256,10 +332,10 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <hr class="divider" />
-        <h2 class="title is-3">Segmentation on Synthetic dataset</h2>
+        <h2 class="title is-3">Segmentation with different foundation models</h2>
         <div class="content has-text-justified">
           <p>
-            Our method achieves excellent semantic segmentation performance not only on real-world datasets but also on synthetic datasets.
+            Our method leverages various 2D foundation models, including DINOv2, Lseg (CLIP), a combination of DINOv2 and Lseg and SAM, to effectively capture and understand the semantics of 3D scenes.
           </p>
         </div>
       </div>
@@ -272,33 +348,33 @@
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item item-lamp-positive">
               <video poster="" id="lamp-positive" autoplay muted loop playsinline height="100%">
-                  <source src="./static/videos/detect/detect_jumpingjacks.mp4" type="video/mp4">
+                  <source src="./static/videos/detect/detect_americano.mp4 type="video/mp4">
               </video>
-              <p class="has-text-centered">detect"Jacket"</p>
+              <p class="has-text-centered">DINOv2 (click)</p>
             </div>
             <div class="item item-bike-positive">
               <video poster="" id="bike-positive" autoplay muted loop playsinline height="100%">
-                  <source src="./static/videos/detect/detect_standup.mp4" type="video/mp4">
+                  <source src="./static/videos/detect/detect_broom.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">detect"Helmet"</p>
+              <p class="has-text-centered">Lseg (text prompt)</p>
             </div>
             <div class="item item-alien-positive">
               <video poster="" id="alien-positive" autoplay muted loop playsinline height="100%">
-                  <source src="./static/videos/detect/detect_trex.mp4" type="video/mp4">
+                  <source src="./static/videos/detect/detect_chick.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">detect"Skull"</p>
+              <p class="has-text-centered">Lseg (click)</p>
             </div>
-            <!-- <div class="item item-camel-positive">
+            <div class="item item-camel-positive">
               <video poster="" id="camel-positive" autoplay muted loop playsinline height="100%">
-                  <source src="./static/videos/detect/detect_jumpingjacks.mp4" type="video/mp4">
+                  <source src="./static/videos/detect/detect_cookie.mp4" type="video/mp4">
               </video>
               <p class="has-text-centered">DINOv2 and Lseg (click)</p>
-            </div> -->
+            </div>
             <div class="item item-hammer-positive-negative">
                 <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
-                    <source src="./static/videos/detect/detect_hook.mp4" type="video/mp4">
+                    <source src="./static/videos/detect/detect_torchocolate.mp4" type="video/mp4">
                 </video>
-                <p class="has-text-centered">detect"hands"</p>
+                <p class="has-text-centered">SAM (click)</p>
             </div>
           </div>
         </div>
@@ -314,30 +390,29 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <hr class="divider" />
-        <h2 class="title is-3">comparison</h2>
+        <h2 class="title is-3">Granularity</h2>
         <div class="content has-text-justified">
           <p>
-            Our approach exceeds Baseline in rendering quality, semantic feature integrity, and lexical detection accuracy
-            (Our method is on the left, Baseline is on the right)
+            Our semantic understanding of the scene captures fine-grained details, allowing us to control the click segmentation's granularity by adjusting the parameter θ.
           </p>
         </div>
-      </div> 
-    </div> 
+      </div>
+    </div>
     <!-- End of Granularity -->
     <!-- Results carousel -->
-    <!-- <section class="hero is-light is-small">
+    <section class="hero is-light is-small">
       <div class="hero-body">
         <div class="container">
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item item-lamp-positive">
               <video poster="" id="lamp-positive" autoplay muted loop playsinline height="100%">
-                  <source src="./static/videos/compare/" type="video/mp4">
+                  <source src="./static/videos/Granularity/video_090_sloww.mp4" type="video/mp4">
               </video>
               <p class="has-text-centered">θ = 0.9</p>
-            </div> -->
-            <!-- <div class="item item-bike-positive">
+            </div>
+            <div class="item item-bike-positive">
               <video poster="" id="bike-positive" autoplay muted loop playsinline height="100%">
-                  <source src="./static/videos/compare/renders_broom_duibi.mp4" type="video/mp4">
+                  <source src="./static/videos/Granularity/video_085_sloww.mp4" type="video/mp4">
               </video>
               <p class="has-text-centered">θ = 0.85</p>
             </div>
@@ -363,19 +438,14 @@
                 <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
                     <source src="./static/videos/Granularity/video_060_sloww.mp4" type="video/mp4">
                 </video>
-                <p class="has-text-centered">θ = 0.6</p> -->
-            <!-- </div>
+                <p class="has-text-centered">θ = 0.6</p>
+            </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
     <!-- End of results carousel -->
-    <h1>Video Example</h1>
-    <!-- 在这里插入视频 -->
-    <video width="1000" height="536" autoplay muted loop playsinline>
-        <source src="./static/videos/compare/page_broom_duibi.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+
 
 
 <!-- Results -->
@@ -384,21 +454,24 @@
     <hr class="divider" />
     <h2 class="title is-3">Editing</h2>
     <div class="content has-text-justified">
-        Visual illustration of our method’s ability to semantically remove objects. </p>
+        Visual illustration of our method’s ability to semantically edit segmented and
+        tracked objects. Given the segmented region of the “cookie” (resp. “torch”), we consider
+        the ability to edit its texture using the prompt “strawberry” (resp. “handgun”). Here,
+        we display a randomly selected novel view over time. </p>
         <table width="200" border="0" align="center">
             <tbody>
                     <tr>
-                <td align="center">remove "Cookie"</td>
+                <td align="center">A red strawberry</td>
                 <td></td>
-                <td align="center">remove "Lemon"</td>
+                <td align="center">A black handgun</td>
             </tr>
             <tr>
-                <td align="center"><video width="400" controls="controls" autoplay muted playsinline loop>
-                    <source src="./static/videos/remove/remove_cookie.mp4" type="video/mp4" />
+                <td align="center"><video width="200" controls="controls" autoplay muted playsinline loop>
+                    <source src="./static/videos/editing/strawberry.mp4" type="video/mp4" />
                 </video></td>
                 <td align="center"><video width="10">
-                <td align="center"><video width="350" controls="controls" autoplay muted playsinline loop>
-                    <source src="./static/videos/remove/page_remove_lemon.mp4" type="video/mp4" />
+                <td align="center"><video width="200" controls="controls" autoplay muted playsinline loop>
+                    <source src="./static/videos/editing/handgun.mp4" type="video/mp4" />
                 </video></td>
             </tr>
 
@@ -409,6 +482,21 @@
         
    
 
+<!--BibTex -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{labe2024dgd,
+      title={DGD: Dynamic 3D Gaussians Distillation}, 
+      author={Isaac Labe and Noam Issachar and Itai Lang and Sagie Benaim},
+      year={2024},
+      eprint={2405.19321},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code></pre>
+  </div>
+</section>
+<!-- End of BibTex -->
 
 <!-- footer -->
 <footer class="footer">

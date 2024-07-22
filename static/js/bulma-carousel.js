@@ -2307,7 +2307,7 @@ var Translate = function () {
 var defaultOptions = {
   initialSlide: 0,
   slidesToScroll: 1,
-  slidesToShow: 1,
+  slidesToShow: 2,
 
   navigation: true,
   navigationKeys: true,
@@ -2327,16 +2327,16 @@ var defaultOptions = {
   pauseOnHover: true,
   breakpoints: [{
     changePoint: 480,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1
   }, {
     changePoint: 640,
-    slidesToShow: 2,
-    slidesToScroll: 2
+    slidesToShow: 4,
+    slidesToScroll: 1
   }, {
     changePoint: 768,
-    slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToShow: 2,
+    slidesToScroll: 1
   }],
 
   onReady: null,
