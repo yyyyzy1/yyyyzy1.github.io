@@ -2,25 +2,25 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="DGD is a method to distill 2D semantic features to dynamic 3D Gaussian Splatting scenes, allowing for semantic segmentation of dynamic objects in 3D.">
-  <meta name="keywords" content="DGD, Segmentation, 3D Gaussians Splatting, Foundation Models">
+  <meta name="description" content="DHO is an integrated method to reconstruct and understand dynamic scenes.">
+  <meta name="keywords" content="DHO , Semantics, Segmentation, 4D Gaussians Splatting, Foundation Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Meta tags for social media banners !-->
-  <meta property="og:title" content="SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians"/>
-  <meta property="og:description" content="DGD is a method to distill 2D semantic features to dynamic 3D Gaussian Splatting scenes, allowing for semantic segmentation of dynamic objects in 3D."/>
+  <meta property="og:title" content="Divide-and-Conquer: Dual-Hierarchical Optimization for Semantic 4D Gaussians"/>
+  <meta property="og:description" content="DHO is an integrated method to reconstruct and understand dynamic scenes."/>
 <!--  <meta property="og:url" content="https://threedle.github.io/iSeg/"/>-->
 <!--  <meta property="og:image" content="./static/images/og_banner.png" />-->
 <!--  <meta property="og:image:width" content="1200"/>-->
 <!--  <meta property="og:image:height" content="630"/>-->
 
-  <meta name="twitter:title" content="SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians">
-  <meta name="twitter:description" content="DGD is a method to distill 2D semantic features to dynamic 3D Gaussian Splatting scenes, allowing for semantic segmentation of dynamic objects in 3D.">
+  <meta name="twitter:title" content="Divide-and-Conquer: Dual-Hierarchical Optimization for Semantic 4D Gaussians">
+  <meta name="twitter:description" content="DHO is an integrated method to reconstruct and understand dynamic scenes.">
 <!--  <meta name="twitter:image" content="./static/images/twitter_banner.png">-->
   <meta name="twitter:card" content="summary_large_image">
   <!-- End of Meta tags for social media banners !-->
   
-  <title>SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians</title>
+  <title>Divide-and-Conquer: Dual-Hierarchical Optimization for Semantic 4D Gaussians</title>
 <!--  <link rel="icon" type="image/x-icon" href="./static/images/iseg_icon.ico">-->
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
@@ -64,7 +64,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">SDHD-G: Semantic Dual-Hierarchical Dynamic 3D Gaussians</h1>
+          <h1 class="title is-1 publication-title">Divide-and-Conquer: Dual-Hierarchical Optimization for Semantic 4D Gaussians</h1>
           
 
 
@@ -80,37 +80,37 @@
           <video poster="" id="lamp-positive" autoplay muted loop playsinline height="100%">
               <source src="./static/videos/detect/detect_americano.mp4" type="video/mp4">
           </video>
-          <p class="has-text-centered">detect:Cup"</p>
+          <p class="has-text-centered">Seg "Cup"</p>
         </div>
         <div class="item item-bike-positive">
           <video poster="" id="bike-positive" autoplay muted loop playsinline height="100%">
               <source src="./static/videos/detect/detect_broom.mp4" type="video/mp4">
           </video>
-          <p class="has-text-centered">detect:"Broom"</p>
+          <p class="has-text-centered">Seg "Broom"</p>
         </div>
         <div class="item item-alien-positive">
           <video poster="" id="alien-positive" autoplay muted loop playsinline height="100%">
               <source src="./static/videos/detect/detect_chick.mp4" type="video/mp4">
           </video>
-          <p class="has-text-centered">detect:"Toy"</p>
+          <p class="has-text-centered">Seg "Toy"</p>
         </div>
         <div class="item item-camel-positive">
           <video poster="" id="camel-positive" autoplay muted loop playsinline height="100%">
               <source src="./static/videos/detect/detect_cookie.mp4" type="video/mp4">
           </video>
-          <p class="has-text-centered">detect:"Cookie""</p>
+          <p class="has-text-centered">Seg "Cookie""</p>
         </div>
         <div class="item item-hammer-positive-negative">
             <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
                 <source src="./static/videos/detect/detect_torchocolate.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered">detect:"Chocolate"</p>
+            <p class="has-text-centered">Seg "Chocolate"</p>
         </div>
         <div class="item item-new-video">
           <video poster="" id="new-video" autoplay muted loop playsinline height="100%">
               <source src="./static/videos/detect/detect_ovenmitts.mp4" type="video/mp4">
           </video>
-          <p class="has-text-centered">detect:"Mitts"</p>
+          <p class="has-text-centered">Seg "Mitts"</p>
         </div>
 
       </div>
@@ -125,7 +125,8 @@
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
           <br>
-          </b> Our method enables high-quality rendering and semantic understanding for both simple and complex dynamic scenes, providing a stable foundation for downstream tasks.
+          </b> Our method is dedicated to achieving high-quality rendering and accurate semantic understanding of dynamic scenes, 
+          while providing support for downstream tasks in 4D scenarios.
       </h2>
     </div>
   </div>
@@ -142,19 +143,18 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Dynamic 3D semantic Gaussians can be used for reconstructing and understanding dynamic scenes captured from a monocular camera, 
+            Semantic 4D Gaussians can be used for reconstructing and understanding dynamic scenes captured from a monocular camera,
             resulting in a better handling of target information with temporal variations than static sences.
-            However, most current work focuses on static scenes, directly applying static methods for dynamic scenes is impractical,
-            as static methods fail to capture the temporal behaviors and features of dynamic targets.
-            To the best of our knowledge, only one existing work focuses on semantic comprehension of dynamic scenes based on 3DGS. 
-            While this work demonstrates promising capabilities in simple scenes,
-            it struggles to achieve high-fidelity rendering and accurate semantic features in scenarios where the background contains significant noise and the dynamic foreground exhibits substantial deformation and intricate textures. 
-            Because it simply combines dynamic reconstruction and understanding without considering the difference between static and dynamic Gaussians, leading to the mixture of static background and dynamic foreground features.
-            To address these limitations, we propose SDHD-G,consists of hierarchical Gaussian flows and hierarchical rendering weights. The former realizes effective separation of static and dynamic rendering and their features. 
-            The former realizes effective separation of static and dynamic rendering and their features. 
-            The latter is employed in scenes with complex background noise (e.g. the “broom” scene in Hypernerf) to enhance the rendering quality of dynamic foregrounds.
-            Extensive experiments show that our method consistently outperforms previous method on synthetic and real-world datasets. 
-
+            However, most recent work focuses on the semantics of static scenes. Directly applying them to understand dynamic scenes is impractical, 
+            which fail to capture the temporal behaviors and features of dynamic targets.
+            To the best of our knowledge, few existing works focus on semantic comprehension of dynamic scenes based on 3DGS. 
+            While demonstrating promising capabilities in simple scenes, it struggles to achieve high-fidelity rendering and accurate semantic features in scenarios where the static background contains significant noise and the dynamic foreground exhibits substantial deformation with intricate textures. 
+            Because a uniform update strategy is applied to all Gaussians, overlooking the distinctions and interaction between dynamic and static distributions. 
+            This leads to artifacts and noise during semantic segmentation, especially between dynamic foreground and static background.
+            To address these limitations, we propose the Dual-Hierarchical Optimization(DHO),
+            which consists hierarchical Gaussian flow and hierarchical rendering guidance. The former implements effective separation of static and dynamic rendering and their features.
+            The latter helps mitigate the issue of dynamic foreground rendering distortion in scenes where the static background has complex noise (e.g. the “broom” scene in HyperNeRF dataset).
+            Extensive experiments show that our method consistently outperforms previous method on both synthetic and real-world datasets.
           </p>
         </div>
       </div>
@@ -172,10 +172,9 @@
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
           <p>
-          Dynamic 3D Gaussians Distillation utilizes 3D Gaussian representation and optimizes
-          spatial parameters of the Gaussians and their deformation, concurrently with
-          appearance properties with a semantic feature per Gaussian. Our learned representation
-          enables efficient semantic understanding and manipulation of dynamic 3D scenes.
+            The overall pipeline of our model. We add semantic properties to each Gaussian and obtain the geometric deformation of the Gaussian at each timestamp t through the deformation field. 
+            In the coarse stage, Gaussians are subjected to geometric constraints, while in the fine stage, geometric constraints are relaxed and semantic feature constraints are introduced. 
+            We utilize dynamic foreground masks obtained from scene priors for hierarchical weighted rendering of the scene, enhancing the rendering quality of dynamic foreground in complex backgrounds.
           </p>
         </div>
         <div class="two-col-image">
@@ -195,8 +194,8 @@
         <h2 class="title is-3">Visual Results</h2>
         <div class="content has-text-justified">
           <p>
-            The following results show the novel view rendering views and the extracted semantic feature maps using our method, 
-            evaluated on both the real-world HyperNeRF dataset and the synthetic D-NeRF dataset. The visualization of the feature maps is displayed using PCA for dimensionality reduction.
+            The following results show the novel rendering views and the extracted semantic feature maps using our method, 
+            evaluated on both the real-world HyperNeRF dataset and the synthetic D-NeRF dataset. The visualization of the feature maps is displayed using PCA for dimension reduction.
             <table width="200" border="0" align="center">
             <tbody>
 
@@ -263,7 +262,7 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <hr class="divider" />
-        <h2 class="title is-3">Segmentation on Synthetic dataset</h2>
+        <h2 class="title is-3">Segmentation on Synthetic Dataset</h2>
         <div class="content has-text-justified">
           <p>
             Our method achieves excellent semantic segmentation performance not only on real-world datasets but also on synthetic datasets.
@@ -281,31 +280,31 @@
               <video poster="" id="lamp-positive" autoplay muted loop playsinline height="100%">
                   <source src="./static/videos/detect/detect_jumpingjacks.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">detect"Jacket"</p>
+              <p class="has-text-centered">Seg "Jacket"</p>
             </div>
             <div class="item item-bike-positive">
               <video poster="" id="bike-positive" autoplay muted loop playsinline height="100%">
                   <source src="./static/videos/detect/detect_standup.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">detect"Helmet"</p>
+              <p class="has-text-centered">Seg "Helmet"</p>
             </div>
             <div class="item item-alien-positive">
               <video poster="" id="alien-positive" autoplay muted loop playsinline height="100%">
                   <source src="./static/videos/detect/detect_trex.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">detect"Skull"</p>
+              <p class="has-text-centered">Seg "Skull"</p>
             </div>
             <div class="item item-camel-positive">
               <video poster="" id="camel-positive" autoplay muted loop playsinline height="100%">
                   <source src="./static/videos/detect/detect_lego.mp4" type="video/mp4">
               </video>
-              <p class="has-text-centered">detect"Lego Toy"</p>
+              <p class="has-text-centered">Seg "Lego Toy"</p>
             </div>
             <div class="item item-hammer-positive-negative">
                 <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
                     <source src="./static/videos/detect/detect_hook.mp4" type="video/mp4">
                 </video>
-                <p class="has-text-centered">detect"Hands"</p>
+                <p class="has-text-centered">Seg "Hands"</p>
             </div>
           </div>
         </div>
@@ -321,10 +320,10 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <hr class="divider" />
-        <h2 class="title is-3">comparison</h2>
+        <h2 class="title is-3">Comparison with Baseline</h2>
         <div class="content has-text-justified">
           <p>
-            Our approach exceeds Baseline in rendering quality, semantic feature integrity, and lexical detection accuracy
+            Our method outperforms the baseline in terms of rendering quality, semantic feature completeness, and semantic segmentation accuracy.
             (Our method is on the left, Baseline is on the right)
           </p>
         </div>
@@ -377,17 +376,16 @@
       </div>
     </section> -->
     <!-- End of results carousel -->
-    <h1>Video Example</h1>
+
     <!-- 在这里插入视频 -->
     <video width="1000" height="536" autoplay muted loop playsinline>
         <source src="./static/videos/compare/page_broom_duibi.mp4" type="video/mp4">
-        Your browser does not support the video tag.
     </video>
 
   <div class="columns is-centered">
     <div class="column is-full-width">
       <hr class="divider" />
-      <h2 class="title is-3">Multi-Scale</h2>
+      <h2 class="title is-3">Multi-Scale Semantic Feature and Segmentation</h2>
       <div class="content has-text-justified">
         Visualization results of multi-scale dynamic semantic features. </p>
           <table width="200" border="0" align="center">
@@ -415,15 +413,15 @@
 <div class="columns is-centered">
   <div class="column is-full-width">
     <hr class="divider" />
-    <h2 class="title is-3">Editing</h2>
+    <h2 class="title is-3">Semantic Editing</h2>
     <div class="content has-text-justified">
         Visual illustration of our method’s ability to semantically remove objects. </p>
         <table width="200" border="0" align="center">
             <tbody>
                     <tr>
-                <td align="center">remove "Cookie"</td>
+                <td align="center">Remove "Cookie"</td>
                 <td></td>
-                <td align="center">remove "Lemon"</td>
+                <td align="center">Remove "Lemon"</td>
             </tr>
             <tr>
                 <td align="center"><video width="435" controls="controls" autoplay muted playsinline loop>
