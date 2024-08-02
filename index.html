@@ -3,25 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="description" content="DHO is an integrated method to reconstruct and understand dynamic scenes.">
-  <meta name="keywords" content="DHO , Semantics, Segmentation, 4D Gaussians Splatting, Foundation Models">
+  <meta name="keywords" content="DHO, Semantics, Segmentation, 4D Gaussians Splatting, Foundation Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Meta tags for social media banners !-->
-  <meta property="og:title" content="Divide-and-Conquer: Dual-Hierarchical Optimization for Semantic 4D Gaussians"/>
-  <meta property="og:description" content="DHO is an integrated method to reconstruct and understand dynamic scenes."/>
-<!--  <meta property="og:url" content="https://threedle.github.io/iSeg/"/>-->
-<!--  <meta property="og:image" content="./static/images/og_banner.png" />-->
-<!--  <meta property="og:image:width" content="1200"/>-->
-<!--  <meta property="og:image:height" content="630"/>-->
 
-  <meta name="twitter:title" content="Divide-and-Conquer: Dual-Hierarchical Optimization for Semantic 4D Gaussians">
+  <meta property="og:title" content="Divide-and-Conquer: The Dual-Hierarchical Optimization for Semantic 4D Gaussians"/>
+
+
+  <meta name="twitter:title" content="Divide-and-Conquer: The Dual-Hierarchical Optimization for Semantic 4D Gaussians">
   <meta name="twitter:description" content="DHO is an integrated method to reconstruct and understand dynamic scenes.">
-<!--  <meta name="twitter:image" content="./static/images/twitter_banner.png">-->
+
   <meta name="twitter:card" content="summary_large_image">
-  <!-- End of Meta tags for social media banners !-->
+ 
   
   <title>Divide-and-Conquer: Dual-Hierarchical Optimization for Semantic 4D Gaussians</title>
-<!--  <link rel="icon" type="image/x-icon" href="./static/images/iseg_icon.ico">-->
+
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -40,37 +36,18 @@
 </head>
 
 <body>
-<!-- Navigation Bar -->
-<!--<nav class="navbar" role="navigation" aria-label="main navigation">-->
-<!--  <div class="navbar-brand">-->
-<!--    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">-->
-<!--      <span aria-hidden="true"></span>-->
-<!--      <span aria-hidden="true"></span>-->
-<!--      <span aria-hidden="true"></span>-->
-<!--    </a>-->
-<!--  </div>-->
-<!--  <div class="navbar-menu">-->
-<!--    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">-->
-<!--      <a class="navbar-item" href="https://3dl.cs.uchicago.edu/">-->
-<!--        <span class="threedle-icon"></span>-->
-<!--      </a>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</nav>-->
-<!-- End of Navigation Bar -->
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Divide-and-Conquer: Dual-Hierarchical Optimization for Semantic 4D Gaussians</h1>
+          <h1 class="title is-1 publication-title">Divide-and-Conquer: The Dual-Hierarchical Optimization for Semantic 4D Gaussians</h1>
           
 
 
 
-  
-<!-- Results carousel -->
+
 <section class="hero is-light is-small">
   <div class="hero-body">
       
@@ -117,9 +94,7 @@
     </div>
   </div>
 </section>
-<!-- End of results carousel -->
 
-<!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -131,7 +106,7 @@
     </div>
   </div>
 </section>
-<!-- End of teaser video -->
+
 
 
 
@@ -146,15 +121,15 @@
             Semantic 4D Gaussians can be used for reconstructing and understanding dynamic scenes captured from a monocular camera,
             resulting in a better handling of target information with temporal variations than static sences.
             However, most recent work focuses on the semantics of static scenes. Directly applying them to understand dynamic scenes is impractical, 
-            which fail to capture the temporal behaviors and features of dynamic targets.
+            which fails to capture the temporal behaviors and features of dynamic objects.
             To the best of our knowledge, few existing works focus on semantic comprehension of dynamic scenes based on 3DGS. 
             While demonstrating promising capabilities in simple scenes, it struggles to achieve high-fidelity rendering and accurate semantic features in scenarios where the static background contains significant noise and the dynamic foreground exhibits substantial deformation with intricate textures. 
-            Because a uniform update strategy is applied to all Gaussians, overlooking the distinctions and interaction between dynamic and static distributions. 
+            Because the same update strategy is applied to all Gaussians, overlooking the distinctions and interaction between dynamic and static distributions. 
             This leads to artifacts and noise during semantic segmentation, especially between dynamic foreground and static background.
             To address these limitations, we propose the Dual-Hierarchical Optimization(DHO),
             which consists hierarchical Gaussian flow and hierarchical rendering guidance. The former implements effective separation of static and dynamic rendering and their features.
             The latter helps mitigate the issue of dynamic foreground rendering distortion in scenes where the static background has complex noise (e.g. the “broom” scene in HyperNeRF dataset).
-            Extensive experiments show that our method consistently outperforms previous method on both synthetic and real-world datasets.
+            Extensive experiments show that our method consistently outperforms baselines on both synthetic and real-world datasets.
           </p>
         </div>
       </div>
@@ -174,7 +149,7 @@
           <p>
             The overall pipeline of our model. We add semantic properties to each Gaussian and obtain the geometric deformation of the Gaussian at each timestamp t through the deformation field. 
             In the coarse stage, Gaussians are subjected to geometric constraints, while in the fine stage, geometric constraints are relaxed and semantic feature constraints are introduced. 
-            We utilize dynamic foreground masks obtained from scene priors for hierarchical weighted rendering of the scene, enhancing the rendering quality of dynamic foreground in complex backgrounds.
+            We utilize dynamic foreground masks obtained from scene priors for hierarchical rendering guidance of the scene, enhancing the rendering quality of dynamic foreground with complex backgrounds.
           </p>
         </div>
         <div class="two-col-image">
@@ -258,7 +233,7 @@
     </div>
     <!-- End of Results -->
 
-    <!-- Segmentation with differents foundation models -->
+   
     <div class="columns is-centered">
       <div class="column is-full-width">
         <hr class="divider" />
@@ -270,8 +245,7 @@
         </div>
       </div>
     </div>
-    <!-- End of Segmentation with differents foundation models -->
-    <!-- Results carousel -->
+  
     <section class="hero is-light is-small">
       <div class="hero-body">
         <div class="container">
@@ -310,13 +284,13 @@
         </div>
       </div>
     </section>
-    <!-- End of results carousel -->
+
     
     
     
     
     
-    <!-- Granularity -->
+
     <div class="columns is-centered">
       <div class="column is-full-width">
         <hr class="divider" />
@@ -329,55 +303,7 @@
         </div>
       </div> 
     </div> 
-    <!-- End of Granularity -->
-    <!-- Results carousel -->
-    <!-- <section class="hero is-light is-small">
-      <div class="hero-body">
-        <div class="container">
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item item-lamp-positive">
-              <video poster="" id="lamp-positive" autoplay muted loop playsinline height="100%">
-                  <source src="./static/videos/compare/" type="video/mp4">
-              </video>
-              <p class="has-text-centered">θ = 0.9</p>
-            </div> -->
-            <!-- <div class="item item-bike-positive">
-              <video poster="" id="bike-positive" autoplay muted loop playsinline height="100%">
-                  <source src="./static/videos/compare/renders_broom_duibi.mp4" type="video/mp4">
-              </video>
-              <p class="has-text-centered">θ = 0.85</p>
-            </div>
-            <div class="item item-alien-positive">
-              <video poster="" id="alien-positive" autoplay muted loop playsinline height="100%">
-                  <source src="./static/videos/Granularity/video_080_sloww.mp4" type="video/mp4">
-              </video>
-              <p class="has-text-centered">θ = 0.8</p>
-            </div>
-            <div class="item item-camel-positive">
-              <video poster="" id="camel-positive" autoplay muted loop playsinline height="100%">
-                  <source src="./static/videos/Granularity/video_075_sloww.mp4" type="video/mp4">
-              </video>
-              <p class="has-text-centered">θ = 0.75</p>
-            </div>
-            <div class="item item-hammer-positive-negative">
-                <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
-                    <source src="./static/videos/Granularity/video_070_sloww.mp4" type="video/mp4">
-                </video>
-                <p class="has-text-centered">θ = 0.7</p>
-            </div>
-            <div class="item item-hammer-positive-negative">
-                <video poster="" id="hammer-positive-negative" autoplay muted loop playsinline height="100%">
-                    <source src="./static/videos/Granularity/video_060_sloww.mp4" type="video/mp4">
-                </video>
-                <p class="has-text-centered">θ = 0.6</p> -->
-            <!-- </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- End of results carousel -->
-
-    <!-- 在这里插入视频 -->
+    
     <video width="1000" height="536" autoplay muted loop playsinline>
         <source src="./static/videos/compare/page_broom_duibi.mp4" type="video/mp4">
     </video>
@@ -387,7 +313,7 @@
       <hr class="divider" />
       <h2 class="title is-3">Multi-Scale Semantic Feature and Segmentation</h2>
       <div class="content has-text-justified">
-        Visualization results of multi-scale dynamic semantic features. </p>
+        Visualization results of multi-scale dynamic semantic segmentation . </p>
           <table width="200" border="0" align="center">
               <tbody>
                       <tr>
@@ -440,30 +366,5 @@
         
    
 
-
-<!-- footer -->
-<!-- <footer class="footer"> -->
-  <!-- <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link" href="https://github.com/Isaaclabe/DGD-Dynamic-3D-Gaussians-Distillation" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div> -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            Parts of the code for this website are reused from the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> contributed by the authors of <a href="https://nerfies.github.io/">Nerfies</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer> -->
-<!-- End of footer -->
 </body>
 </html>
